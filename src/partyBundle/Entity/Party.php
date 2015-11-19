@@ -138,4 +138,89 @@ class Party
     {
         return $this->nblimit;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $Party;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Party = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add party
+     *
+     * @param \partyBundle\Entity\Party $party
+     *
+     * @return Party
+     */
+    public function addParty(\partyBundle\Entity\Party $party)
+    {
+        $this->Party[] = $party;
+
+        return $this;
+    }
+
+    /**
+     * Remove party
+     *
+     * @param \partyBundle\Entity\Party $party
+     */
+    public function removeParty(\partyBundle\Entity\Party $party)
+    {
+        $this->Party->removeElement($party);
+    }
+
+    /**
+     * Get party
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getParty()
+    {
+        return $this->Party;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $User;
+
+
+    /**
+     * Add user
+     *
+     * @param \Application\Sonata\UserBundle\Entity\User $user
+     *
+     * @return Party
+     */
+    public function addUser(\Application\Sonata\UserBundle\Entity\User $user)
+    {
+        $this->User[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \Application\Sonata\UserBundle\Entity\User $user
+     */
+    public function removeUser(\Application\Sonata\UserBundle\Entity\User $user)
+    {
+        $this->User->removeElement($user);
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUser()
+    {
+        return $this->User;
+    }
 }

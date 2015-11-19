@@ -7,3 +7,8 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    admin.party:
+        class: partyBundle\Admin\PartyAdmin
+        arguments: [~, partyBundle\Entity\Party, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Party", label: "Party" }

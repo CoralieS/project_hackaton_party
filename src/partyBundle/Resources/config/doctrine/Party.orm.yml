@@ -1,0 +1,22 @@
+partyBundle\Entity\Party:
+    type: entity
+    table: null
+    repositoryClass: partyBundle\Entity\PartyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        lieu:
+            type: string
+            length: 255
+        nblimit:
+            type: integer
+    lifecycleCallbacks: {  }

@@ -21,17 +21,6 @@ partyBundle\Entity\Party:
             type: integer
     lifecycleCallbacks: {  }
     manyToMany:
-        User:
-            targetEntity: Application\Sonata\UserBundle\Entity\User
-            mappedBy: party
-#    manyToMany:
-#        Party:
-#            targetEntity: partyBundle\Entity\Party
-#            joinTable:
-#                name: participation
-#                joinColumns:
-#                    party_id:
-#                        referencedColumnName: id
-#                inverseJoinColumns:
-#                    user_id:
-#                        referencedColumnName: id
+        users:
+            targetEntity: FOS\UserBundle\Entity\User
+            mappedBy: participant

@@ -76,4 +76,101 @@ class User extends BaseUser
     {
         return $this->user;
     }
+    /**
+     * @var \Application\Sonata\UserBundle\Entity\Party
+     */
+    private $party;
+
+
+    /**
+     * Set party
+     *
+     * @param \Application\Sonata\UserBundle\Entity\Party $party
+     *
+     * @return User
+     */
+    public function setParty(\Application\Sonata\UserBundle\Entity\Party $party = null)
+    {
+        $this->party = $party;
+
+        return $this;
+    }
+
+    /**
+     * Get party
+     *
+     * @return \Application\Sonata\UserBundle\Entity\Party
+     */
+    public function getParty()
+    {
+        return $this->party;
+    }
+    /**
+     * @var \partyBundle\Entity\Participation
+     */
+    private $participation;
+
+
+    /**
+     * Set participation
+     *
+     * @param \partyBundle\Entity\Participation $participation
+     *
+     * @return User
+     */
+    public function setParticipation(\partyBundle\Entity\Participation $participation = null)
+    {
+        $this->participation = $participation;
+
+        return $this;
+    }
+
+    /**
+     * Get participation
+     *
+     * @return \partyBundle\Entity\Participation
+     */
+    public function getParticipation()
+    {
+        return $this->participation;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $participant;
+
+
+    /**
+     * Add participant
+     *
+     * @param \partyBundle\Entity\Party $participant
+     *
+     * @return User
+     */
+    public function addParticipant(\partyBundle\Entity\Party $participant)
+    {
+        $this->participant[] = $participant;
+
+        return $this;
+    }
+
+    /**
+     * Remove participant
+     *
+     * @param \partyBundle\Entity\Party $participant
+     */
+    public function removeParticipant(\partyBundle\Entity\Party $participant)
+    {
+        $this->participant->removeElement($participant);
+    }
+
+    /**
+     * Get participant
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getParticipant()
+    {
+        return $this->participant;
+    }
 }

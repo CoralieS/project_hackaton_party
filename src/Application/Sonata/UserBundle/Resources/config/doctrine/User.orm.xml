@@ -9,8 +9,8 @@
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
-        <many-to-many field="user" target-entity="Application\Sonata\UserBundle\Entity\User">
-            <join-table name="participation">
+        <many-to-many field="participant" inversed-by="users" target-entity="partyBundle\Entity\Party">
+            <join-table name="users_party">
                 <join-columns>
                     <join-column name="user_id" referenced-column-name="id" />
                 </join-columns>
@@ -19,7 +19,6 @@
                 </inverse-join-columns>
             </join-table>
         </many-to-many>
-
     </entity>
 
 </doctrine-mapping>

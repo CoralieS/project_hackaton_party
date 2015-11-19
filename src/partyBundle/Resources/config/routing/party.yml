@@ -1,0 +1,10 @@
+party:
+    path:     /
+    defaults: { _controller: "partyBundle:Party:index" }
+
+party_show:
+    path:     /{id}/show
+    defaults: { _controller: "partyBundle:Party:show" }
+
+
+

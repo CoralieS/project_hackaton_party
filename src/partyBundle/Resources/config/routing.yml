@@ -1,3 +1,7 @@
+party_party:
+    resource: "@partyBundle/Resources/config/routing/party.yml"
+    prefix:   /party
+
 party_homepage:
     path:     /hello/{name}
     defaults: { _controller: partyBundle:Default:index }

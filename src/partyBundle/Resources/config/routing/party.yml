@@ -6,5 +6,29 @@ party_show:
     path:     /{id}/show
     defaults: { _controller: "partyBundle:Party:show" }
 
+party_new:
+    path:     /new
+    defaults: { _controller: "partyBundle:Party:new" }
 
+party_create:
+    path:     /create
+    defaults: { _controller: "partyBundle:Party:create" }
+    methods:  POST
 
+party_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "partyBundle:Party:edit" }
+
+party_update:
+    path:     /{id}/update
+    defaults: { _controller: "partyBundle:Party:update" }
+    methods:  [POST, PUT]
+
+party_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "partyBundle:Party:delete" }
+    methods:  [POST, DELETE]
+
+party_inscription:
+    path:     /{id}/inscription
+    defaults: { _controller: "partyBundle:Party:inscription" }

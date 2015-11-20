@@ -184,58 +184,63 @@ class Party
     {
         return $this->Party;
     }
+
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \Application\Sonata\UserBundle\Entity\User
      */
-    private $User;
+    private $user;
 
 
     /**
-     * Add user
+     * Set user
      *
      * @param \Application\Sonata\UserBundle\Entity\User $user
      *
      * @return Party
      */
-    public function addUser(\Application\Sonata\UserBundle\Entity\User $user)
+    public function setUser(\Application\Sonata\UserBundle\Entity\User $user = null)
     {
-        $this->User[] = $user;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Remove user
-     *
-     * @param \Application\Sonata\UserBundle\Entity\User $user
-     */
-    public function removeUser(\Application\Sonata\UserBundle\Entity\User $user)
-    {
-        $this->User->removeElement($user);
-    }
-
-    /**
      * Get user
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Application\Sonata\UserBundle\Entity\User
      */
     public function getUser()
     {
-        return $this->User;
+        return $this->user;
     }
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var integer
      */
-    private $users;
+    private $nbPersonne;
 
 
     /**
-     * Get users
+     * Set nbPersonne
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @param integer $nbPersonne
+     *
+     * @return Party
      */
-    public function getUsers()
+    public function setNbPersonne($nbPersonne)
     {
-        return $this->users;
+        $this->nbPersonne = $nbPersonne;
+
+        return $this;
+    }
+
+    /**
+     * Get nbPersonne
+     *
+     * @return integer
+     */
+    public function getNbPersonne()
+    {
+        return $this->nbPersonne;
     }
 }

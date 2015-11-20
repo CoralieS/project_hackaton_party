@@ -3,11 +3,38 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+
+            <link rel="stylesheet" href="{{ asset('bundles/party/css/bootstrap-theme.css') }}"type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('bundles/party/css/bootstrap.css') }}"type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('bundles/party/css/style.css') }}"type="text/css"/>
+
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+    <header>
+        <ul class="nav nav-justified navbar-primary">
+            {% if app.user %}
+                <li><a href="{{ path('sonata_user_profile_edit') }}">Profile</a></li>
+                <li><a href="{{ path('party') }}">Party</a></li>
+                <li><a href="{{ path('sonata_user_admin_security_logout') }}">Logout</a></li>
+                <li><a href="{{ path('sonata_admin_redirect') }}">Admin</a></li>
+            {% else %}
+                <li><a href="{{ path('homepage') }}">Reserv Party</a></li>
+                <li><a href="{{ path('sonata_user_security_login') }}">Login</a></li>
+
+
+            {% endif %}
+        </ul>
+    </header>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+
+            <script src="{{ asset('bundles/party/js/npm.js') }}"></script>
+            <script src="{{ asset('bundles/party/js/bootstrap.js') }}"></script>
+            <script src="{{ asset('bundles/party/js/jquery-2.1.4.js') }}"></script>
+
+        {% endblock %}
     </body>
 </html>

@@ -13,17 +13,6 @@ class Participation
     private $id;
 
     /**
-     * @var boolean
-     */
-    private $paiement;
-
-    /**
-     * @var boolean
-     */
-    private $participation;
-
-
-    /**
      * Get id
      *
      * @return integer
@@ -33,51 +22,59 @@ class Participation
         return $this->id;
     }
 
+    private $user;
+
+
     /**
-     * Set paiement
+     * Set user
      *
-     * @param boolean $paiement
+     * @param \Application\Sonata\UserBundle\Entity\User  $user
      *
-     * @return participation
+     * @return Participation
      */
-    public function setPaiement($paiement)
+    public function setUser(\Application\Sonata\UserBundle\Entity\User $user = null)
     {
-        $this->paiement = $paiement;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get paiement
+     * Get user
      *
-     * @return boolean
+     * @return \Application\Sonata\UserBundle\Entity\User 
      */
-    public function getPaiement()
+    public function getUser()
     {
-        return $this->paiement;
+        return $this->user;
     }
+    /**
+     * @var \partyBundle\Entity\Party
+     */
+    private $party;
+
 
     /**
-     * Set participation
+     * Set party
      *
-     * @param boolean $participation
+     * @param \partyBundle\Entity\Party $party
      *
-     * @return participation
+     * @return Participation
      */
-    public function setParticipation($participation)
+    public function setParty(\partyBundle\Entity\Party $party = null)
     {
-        $this->participation = $participation;
+        $this->party = $party;
 
         return $this;
     }
 
     /**
-     * Get participation
+     * Get party
      *
-     * @return boolean
+     * @return \partyBundle\Entity\Party
      */
-    public function getParticipation()
+    public function getParty()
     {
-        return $this->participation;
+        return $this->party;
     }
 }

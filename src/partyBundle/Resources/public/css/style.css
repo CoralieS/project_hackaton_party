@@ -1,0 +1,20 @@
+th{
+    border: 1px solid black;
+    padding: 4px;
+}
+
+td{
+    border: 1px solid black;
+    padding: 4px;
+}
+body{
+    text-align: center;
+}
+header ul{
+    background-color: orange;
+}
+table{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+}

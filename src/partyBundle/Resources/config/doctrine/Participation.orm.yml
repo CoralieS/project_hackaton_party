@@ -8,9 +8,16 @@ partyBundle\Entity\Participation:
             id: true
             generator:
                 strategy: AUTO
-    fields:
-        paiement:
-            type: boolean
-        participation:
-            type: boolean
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        user:
+            targetEntity: Application\Sonata\UserBundle\Entity\User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+        party:
+            targetEntity: partyBundle\Entity\Party
+            joinColumn:
+                name: party_id
+                referencedColumnName: id

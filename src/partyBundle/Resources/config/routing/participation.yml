@@ -1,0 +1,30 @@
+participation:
+    path:     /
+    defaults: { _controller: "partyBundle:Participation:index" }
+
+participation_show:
+    path:     /{id}/show
+    defaults: { _controller: "partyBundle:Participation:show" }
+
+participation_new:
+    path:     /new
+    defaults: { _controller: "partyBundle:Participation:new" }
+
+participation_create:
+    path:     /create
+    defaults: { _controller: "partyBundle:Participation:create" }
+    methods:  POST
+
+participation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "partyBundle:Participation:edit" }
+
+participation_update:
+    path:     /{id}/update
+    defaults: { _controller: "partyBundle:Participation:update" }
+    methods:  [POST, PUT]
+
+participation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "partyBundle:Participation:delete" }
+    methods:  [POST, DELETE]

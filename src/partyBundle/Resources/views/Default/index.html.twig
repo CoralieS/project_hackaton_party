@@ -1,1 +1,53 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{%  block body %}
+    <div class="row row-fluid">
+        {#<h1>Bienvenue {{ app.user.firstname }}</h1>#}
+
+        <p>Lorem ipsum</p>
+    </div>
+
+    <div class="row row-fluid">
+        <h3>Liste des soirées</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>
+                    Nom
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Lieu
+                </th>
+                <th>
+                    Place Totale
+                </th>
+                <th>
+                    Nombre de Personne
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entity %}
+                <tr>
+                    <td scope="row">{{ entity.nom }}</td>
+                    <td scope="row">{{ entity.date|date('d-m-Y') }}</td>
+                    <td scope="row">{{ entity.lieu }}</td>
+                    <td scope="row">{{ entity.nblimit }}</td>
+                    <td scope="row">{{ entity.nbPersonne }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('party', { 'id': entity.id }) }}">Inscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
